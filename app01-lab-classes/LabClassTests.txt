@@ -5,3 +5,4 @@ Student student_andy = new Student("Andy Red", "5237HSMI");
 student_tom.getCredits()
     returned int 0
 student_tom.addCredits(20);
+student_tom.changeName("Tommy");

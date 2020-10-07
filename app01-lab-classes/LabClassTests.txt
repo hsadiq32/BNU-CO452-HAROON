@@ -5,4 +5,39 @@ Student student_andy = new Student("Andy Red", "5237HSMI");
 student_tom.getCredits()
     returned int 0
 student_tom.addCredits(20);
+student_tom.getLoginName()
+    returned String "Tom 123"
 student_tom.changeName("Tommy");
+co452Lab.printList();
+Lab class unknown
+Instructor: unknown   Room: unknown
+Class list:
+Number of students: 0
+co452Lab.enrollStudent(student_tom);
+co452Lab.enrollStudent(student_john);
+co452Lab.printList();
+Lab class unknown
+Instructor: unknown   Room: unknown
+Class list:
+Tommy, student ID: 1234ABCD, credits: 20
+John Bob, student ID: 5678GHEF, credits: 0
+Number of students: 2
+co452Lab.setInstructor("Teacher");
+co452Lab.setTime("10:00 Tue 29th September");
+co452Lab.setRoom("G3.01");
+co452Lab.printList();
+Lab class 10:00 Tue 29th September
+Instructor: Teacher   Room: G3.01
+Class list:
+Tommy, student ID: 1234ABCD, credits: 20
+John Bob, student ID: 5678GHEF, credits: 0
+Number of students: 2
+co452Lab.enrollStudent(student_andy);
+co452Lab.printList();
+Lab class 10:00 Tue 29th September
+Instructor: Teacher   Room: G3.01
+Class list:
+Tommy, student ID: 1234ABCD, credits: 20
+John Bob, student ID: 5678GHEF, credits: 0
+Andy Red, student ID: 5237HSMI, credits: 0
+Number of students: 3

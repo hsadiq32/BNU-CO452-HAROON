@@ -1,1 +1,4 @@
 LabClass co452Lab = new LabClass(10);
+Student student_tom = new Student("Tom Smith", "1234ABCD");
+Student student_john = new Student("John Bob", "5678GHEF");
+Student student_andy = new Student("Andy Red", "5237HSMI");

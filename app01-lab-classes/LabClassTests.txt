@@ -1,0 +1,1 @@
+LabClass co452Lab = new LabClass(10);

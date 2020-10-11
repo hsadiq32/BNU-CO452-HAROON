@@ -33,6 +33,10 @@ public class Ticket
     }
 
      */
+    public void printTicketInfo ()
     {
+        System.out.println("Destination: " + destination);
+        System.out.println("Cost       : " + cost);
+        System.out.println("Date       : " + date);
     }
 }

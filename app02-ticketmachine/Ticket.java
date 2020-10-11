@@ -26,7 +26,7 @@ public class Ticket
     /**
      * Create a machine that issues tickets of the given price.
      */
-    public Ticket(String station)
+    public Ticket(String destination, String date, int cost)
     {
         this.destination = destination;
         cost = 0;

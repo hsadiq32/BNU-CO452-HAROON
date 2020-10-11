@@ -29,8 +29,8 @@ public class Ticket
     public Ticket(String destination, String date, int cost)
     {
         this.destination = destination;
-        cost = 0;
-        this.date = new Date();
+        this.cost = cost;
+        this.date = date;
     }
 
     /**

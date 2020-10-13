@@ -13,14 +13,15 @@
  * Modified by Haroon Sadiq
  */
 
+import java.util.Date;
 public class Ticket
 {
     // The price of a ticket from this machine.
     private String destination;
     // The amount of money required to pay the ticket
     private int cost;
-    private String date;
     // The date the ticket was issued
+    private Date date;
 
     /**
      * Create a machine that issues tickets of the given price, destination 
@@ -30,7 +31,7 @@ public class Ticket
     {
         this.destination = destination;
         this.cost = cost;
-        this.date = date;
+        date = new Date();
     }
 
      /**

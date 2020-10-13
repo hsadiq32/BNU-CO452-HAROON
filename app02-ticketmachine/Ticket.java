@@ -38,10 +38,13 @@ public class Ticket
      * A method which prints out the tickets details such as: destination, cost 
      * and date
      */
-    public void printTicketInfo ()
+    public void printTicket()
     {
-        System.out.println("Destination: " + destination);
-        System.out.println("Cost       : " + cost);
-        System.out.println("Date       : " + date);
+        System.out.println("##############################");
+        System.out.println("# The BlueJ Line             #");
+        System.out.println("# Destination: " + destination + "   ");
+        System.out.println("# Price:       " + cost + "p          #");
+        System.out.println("#" + date + "#");
+        System.out.println("##############################");      
     }
 }

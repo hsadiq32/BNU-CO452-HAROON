@@ -7,7 +7,9 @@
  */
 public class Course
 {
+    // The course code
     private String course_number;
+    // The title for the course
     private String course_title;
     /**
      * Constructor for creating objects of class Course

@@ -10,13 +10,13 @@ import java.util.*;
  */
 public class Student
 {
-    // the student's full name
+    // The student's full name
     private String name;
-    // the student ID
+    // The student ID
     private String id;
-    // the amount of credits for study taken so far
+    // The amount of credits for study taken so far
     private int credits;
-    
+    // Uses dependancies from Course
     private Course course;
     
     

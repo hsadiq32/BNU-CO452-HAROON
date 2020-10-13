@@ -11,11 +11,15 @@ import java.util.*;
  */
 public class LabClass
 {
+    // The instructors name
     private String instructor;
+    // The room the class will bhe in
     private String room;
+    // The time and day this will take place
     private String timeAndDay;
-    
+    // Creates an array for students
     private ArrayList<Student> students;
+    // The max capacity of the class itself
     private int capacity;
     
     /**

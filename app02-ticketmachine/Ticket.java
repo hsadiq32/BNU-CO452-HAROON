@@ -17,13 +17,14 @@ public class Ticket
 {
     // The price of a ticket from this machine.
     private String destination;
-    // The amount of money entered by a customer so far.
+    // The amount of money required to pay the ticket
     private int cost;
-    // The total amount of money collected by this machine.
     private String date;
+    // The date the ticket was issued
 
     /**
-     * Create a machine that issues tickets of the given price.
+     * Create a machine that issues tickets of the given price, destination 
+     * and date
      */
     public Ticket(String destination, String date, int cost)
     {
@@ -32,6 +33,9 @@ public class Ticket
         this.date = date;
     }
 
+     /**
+     * A method which prints out the tickets details such as: destination, cost 
+     * and date
      */
     public void printTicketInfo ()
     {

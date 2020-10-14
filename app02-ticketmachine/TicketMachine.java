@@ -9,25 +9,34 @@
  * @author David J. Barnes and Michael Kölling
  * @version 2016.02.29
  * 
- * Modified by Student Name
+ * Modified by Haroon Sadiq
  */
+import java.util.Date;
+import java.text.SimpleDateFormat;
 public class TicketMachine
 {
-    // The price of a ticket from this machine.
+    // The price of a ticket from this machine in pence.
     private int price;
-    // The amount of money entered by a customer so far.
+    
+    // The amount of money entered by a customer so far in pence.
     private int balance;
-    // The total amount of money collected by this machine.
+    
+    // The total amount of money collected by this machine in pence.
     private int total;
-
+    
+    // Links enum coin dependancies
+    public Coin coin;
+    
+    //  Creates the three tickets to specification (station and price in pence)
+    public Ticket highWycombeTicket = new Ticket("High Wycombe", 330);    
+    public Ticket amershamTicket = new Ticket("Amersham", 300);
+    public Ticket aylesburyTicket= new Ticket("Aylesbury", 220);
     /**
-     * Create a machine that issues tickets of the given price.
+     * Create a machine that starts a new instance with the user balance at 0
      */
-    public TicketMachine(int cost)
+    public TicketMachine(Ticket ticket, String date)
     {
-        price = cost;
         balance = 0;
-        total = 0;
     }
 
     /**
@@ -46,22 +55,17 @@ public class TicketMachine
     {
         return balance;
     }
+    
 
     /**
-     * Receive an amount of money from a customer.
-     * Check that the amount is sensible.
+     * Uses enum coin class dependancies to insert coins
+     * Check if the inputted data is permissible
      */
-    public void insertMoney(int amount)
+    public void insertMoney(Coin coin)
     {
-        if(amount > 0) 
-        {
-            balance = balance + amount;
-        }
-        else 
-        {
-            System.out.println("Use a positive amount rather than: " +
-                               amount);
-        }
+        System.out.println("Inserted: " + coin + " p");
+        balance = balance + coin.getValue();
+        System.out.println("Balance: "+ balance + " p");
     }
 
     /**
@@ -76,8 +80,9 @@ public class TicketMachine
             // Simulate the printing of a ticket.
             System.out.println("##################");
             System.out.println("# The BlueJ Line");
-            System.out.println("# Ticket");
+            System.out.println("# Destination: " + ticket.getDestination());
             System.out.println("# " + price + " cents.");
+            System.out.println("# " + date);
             System.out.println("##################");
             System.out.println();
 

@@ -1,4 +1,3 @@
-
 /**
  * TicketMachine models a ticket machine that issues
  * flat-fare tickets.
@@ -11,8 +10,7 @@
  * @version 2016.02.29
  * 
  * Modified by Haroon Sadiq
- */
-
+ */ 
 import java.util.Date;
 public class Ticket
 {

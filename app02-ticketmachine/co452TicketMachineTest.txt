@@ -78,3 +78,13 @@ ticketMa1.insert200p();
 #                         #
 # BALANCE: 400
 ###########################
+ticketMa1.printTicket("Aylesbury");
+##############################
+# The BlueJ Line             #
+# Destination: Aylesbury   
+# Price:       220p          #
+#Mon Oct 19 23:03:20 BST 2020#
+##############################
+#        VALID TICKET        #
+##############################
+ REFUNDED: 180p

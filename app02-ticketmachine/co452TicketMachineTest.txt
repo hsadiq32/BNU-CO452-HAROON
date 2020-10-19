@@ -1,1 +1,24 @@
 TicketMachine ticketMa1 = new TicketMachine();
+ticketMa1.showAvailableTickets();
+Our avaiblable tickets are: 
+
+##############################
+# The BlueJ Line             #
+# Destination: Amersham   
+# Price:       300p          #
+#Mon Oct 19 23:03:20 BST 2020#
+##############################
+
+##############################
+# The BlueJ Line             #
+# Destination: Aylesbury   
+# Price:       220p          #
+#Mon Oct 19 23:03:20 BST 2020#
+##############################
+
+##############################
+# The BlueJ Line             #
+# Destination: High Wycombe   
+# Price:       330p          #
+#Mon Oct 19 23:03:20 BST 2020#
+##############################

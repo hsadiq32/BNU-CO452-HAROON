@@ -19,17 +19,16 @@ public class Ticket
     // The amount of money required to pay the ticket
     private int cost;
     // The date the ticket was issued/purchased
-    private Date purchaseDate;
+    private Date timeStamp;
 
     /**
-     * Create a machine that issues tickets of the given price, destination 
-     * and date
+     * Create issues tickets of the given price, destination and date
      */
     public Ticket(String destination, int cost)
     {
         this.destination = destination;
         this.cost = cost;
-        purchaseDate = new Date();
+        timeStamp = new Date();
     }
 
      /**
@@ -42,7 +41,15 @@ public class Ticket
         System.out.println("# The BlueJ Line             #");
         System.out.println("# Destination: " + destination + "   ");
         System.out.println("# Price:       " + cost + "p          #");
-        System.out.println("#" + purchaseDate + "#");
-        System.out.println("##############################");      
+        System.out.println("#" + timeStamp + "#");
+        System.out.println("##############################");
+    }
+    
+    /**
+     * Used to output raw Ticket price to program
+     */
+    public int getCost()
+    {
+        return cost;
     }
 }

@@ -104,3 +104,13 @@ ticketMa1.insert100p();
 #                         #
 # BALANCE: 300
 ###########################
+ticketMa1.printTicket("Amersham");
+##############################
+# The BlueJ Line             #
+# Destination: Amersham   
+# Price:       300p          #
+#Mon Oct 19 23:03:20 BST 2020#
+##############################
+#        VALID TICKET        #
+##############################
+ REFUNDED: 0p

@@ -1,1 +1,0 @@
-TicketMachine ticketMa1 = new TicketMachine();

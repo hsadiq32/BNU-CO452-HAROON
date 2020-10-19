@@ -62,3 +62,7 @@ ticketMa1.printTicket("High Wycombe");
 #        VALID TICKET        #
 ##############################
  REFUNDED: 180p
+ticketMa1.printBalance();
+###########################
+# BALANCE: 0p
+###########################

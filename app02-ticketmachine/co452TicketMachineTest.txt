@@ -52,3 +52,13 @@ ticketMa1.insert200p();
 #                         #
 # BALANCE: 510
 ###########################
+ticketMa1.printTicket("High Wycombe");
+##############################
+# The BlueJ Line             #
+# Destination: High Wycombe   
+# Price:       330p          #
+#Mon Oct 19 23:03:20 BST 2020#
+##############################
+#        VALID TICKET        #
+##############################
+ REFUNDED: 180p

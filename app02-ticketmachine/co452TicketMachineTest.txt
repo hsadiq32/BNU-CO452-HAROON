@@ -88,3 +88,7 @@ ticketMa1.printTicket("Aylesbury");
 #        VALID TICKET        #
 ##############################
  REFUNDED: 180p
+ticketMa1.printBalance();
+###########################
+# BALANCE: 0p
+###########################

@@ -40,3 +40,15 @@ ticketMa1.insert200p();
 ticketMa1.printTicket("High Wycombe");
 INSUFFICIENT FUNDS
 You need 120p more to buy a High Wycombe ticket
+ticketMa1.insert100p();
+###########################
+# INSERTED: 100p          #
+#                         #
+# BALANCE: 310
+###########################
+ticketMa1.insert200p();
+###########################
+# INSERTED: 200p          #
+#                         #
+# BALANCE: 510
+###########################

@@ -165,6 +165,9 @@ public class TicketMachine
         }
     }
 
+    /**
+     * Inserts 10p to balance and notifies the user of this
+     */
     public void insert10p()
     {
         balance = balance + 10;
@@ -175,6 +178,9 @@ public class TicketMachine
         System.out.println("###########################");
     }
     
+    /**
+     * Inserts 20p to balance and notifies the user of this
+     */
     public void insert20p()
     {
         balance = balance + 20;
@@ -185,6 +191,9 @@ public class TicketMachine
         System.out.println("###########################");
     }
     
+    /**
+     * Inserts 100p to balance and notifies the user of this
+     */
     public void insert100p()
     {
         balance = balance + 100;
@@ -195,6 +204,9 @@ public class TicketMachine
         System.out.println("###########################");
     }
     
+    /**
+     * Inserts 200p to balance and notifies the user of this
+     */
     public void insert200p()
     {
         balance = balance + 200;

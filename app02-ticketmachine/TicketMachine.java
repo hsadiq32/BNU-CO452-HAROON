@@ -11,8 +11,6 @@
  * 
  * Modified by Haroon Sadiq
  */
-import java.util.Date;
-import java.text.SimpleDateFormat;
 public class TicketMachine
 {
     // The price of a ticket from this machine in pence.
@@ -27,36 +25,65 @@ public class TicketMachine
     // Links enum coin dependancies
     public Coin coin;
     
+    // Links enum coin dependancies
+    public Ticket ticket;
+    
     //  Creates the three tickets to specification (station and price in pence)
-    public Ticket highWycombeTicket = new Ticket("High Wycombe", 330);    
-    public Ticket amershamTicket = new Ticket("Amersham", 300);
-    public Ticket aylesburyTicket= new Ticket("Aylesbury", 220);
+    private Ticket highWycombeTicket;
+    private Ticket amershamTicket;
+    private Ticket aylesburyTicket;
+    
     /**
      * Create a machine that starts a new instance with the user balance at 0
      */
-    public TicketMachine(Ticket ticket, String date)
+    public TicketMachine()
     {
         balance = 0;
+        price = 0;
+        total = 0;
+        highWycombeTicket = new Ticket("High Wycombe", 330);    
+        amershamTicket = new Ticket("Amersham", 300);
+        aylesburyTicket = new Ticket("Aylesbury", 220);
     }
 
     /**
-     * @Return The price of a ticket.
+     * Prints out the available tickets
      */
-    public int getPrice()
+    public void showAvailableTickets()
     {
-        return price;
+        System.out.println("Our avaiblable tickets are: ");
+        System.out.println();
+        amershamTicket.printTicket();
+        System.out.println();
+        aylesburyTicket.printTicket();
+        System.out.println();
+        highWycombeTicket.printTicket();
+    }
+    
+    /**
+     * Uses enum Coin dependancies to input certain values of coin
+     */
+    public void insertCoin(Coin coin)
+    {
+        System.out.println("###########################");
+        System.out.println("# INSERTED: " + coin + "p          #");
+        System.out.println("#                         #");
+        balance = balance + coin.getValue();
+        System.out.println("# BALANCE: "+ balance + "p          #");
+        System.out.println("###########################");
     }
 
     /**
      * Return The amount of money already inserted for the
      * next ticket.
      */
-    public int getBalance()
+    public void printBalance()
     {
-        return balance;
+        System.out.println("###########################");
+        System.out.println("# BALANCE: "+ balance + "p");
+        System.out.println("###########################");
     }
     
-
     /**
      * Uses enum coin class dependancies to insert coins
      * Check if the inputted data is permissible
@@ -73,41 +100,108 @@ public class TicketMachine
      * reduce the current balance by the ticket price. Print
      * an error message if more money is required.
      */
-    public void printTicket()
+    public void printTicket(String destination)
     {
-        if(balance >= price) 
+        if(destination.equals("High Wycombe"))
         {
-            // Simulate the printing of a ticket.
-            System.out.println("##################");
-            System.out.println("# The BlueJ Line");
-            System.out.println("# Destination: " + ticket.getDestination());
-            System.out.println("# " + price + " cents.");
-            System.out.println("# " + date);
-            System.out.println("##################");
-            System.out.println();
-
-            // Update the total collected with the price.
-            total = total + price;
-            // Reduce the balance by the price.
-            balance = balance - price;
+            price = 330;
+            if(price <= balance)
+            {
+                int refund = balance - price;
+                highWycombeTicket.printTicket();
+                System.out.println("#        VALID TICKET        #");
+                System.out.println("##############################");
+                System.out.println(" REFUNDED: " + refund + "p");
+                balance = 0;
+            }
+            else
+            {
+                int amountLeft = price - balance;
+                System.out.println("INSUFFICIENT FUNDS");
+                System.out.println("You need " + amountLeft + "p more to buy a " + destination + " ticket");
+            }
         }
-        else 
+        else if(destination.equals("Aylesbury"))
         {
-            System.out.println("You must insert at least: " +
-                               (price - balance) + " more cents.");
-                    
+            price = 220;
+            if(price <= balance)
+            {
+                int refund = balance - price;
+                aylesburyTicket.printTicket();
+                System.out.println("#        VALID TICKET        #");
+                System.out.println("##############################");
+                System.out.println(" REFUNDED: " + refund + "p");
+                balance = 0;
+            }
+            else
+            {
+                int amountLeft = price - balance;
+                System.out.println("INSUFFICIENT FUNDS");
+                System.out.println("You need " + amountLeft + "p more to buy a " + destination + " ticket");
+            }
+        }
+        else if(destination.equals("Amersham"))
+        {
+            price = 300;
+            if(price <= balance)
+            {
+                int refund = balance - price;
+                amershamTicket.printTicket();
+                System.out.println("#        VALID TICKET        #");
+                System.out.println("##############################");
+                System.out.println(" REFUNDED: " + refund + "p");
+                balance = 0;
+            }
+            else
+            {
+                int amountLeft = price - balance;
+                System.out.println("INSUFFICIENT FUNDS");
+                System.out.println("You need " + amountLeft + "p more to buy a " + destination + " ticket");
+            }
+        }
+        else
+        {
+            System.out.println("Invalid destination");
         }
     }
 
-    /**
-     * Return the money in the balance.
-     * The balance is cleared.
-     */
-    public int refundBalance()
+    public void insert10p()
     {
-        int amountToRefund;
-        amountToRefund = balance;
-        balance = 0;
-        return amountToRefund;
+        balance = balance + 10;
+        System.out.println("###########################");
+        System.out.println("# INSERTED: 10p           #");
+        System.out.println("#                         #");
+        System.out.println("# BALANCE: "+ balance + "p");
+        System.out.println("###########################");
+    }
+    
+    public void insert20p()
+    {
+        balance = balance + 20;
+        System.out.println("###########################");
+        System.out.println("# INSERTED: 20p           #");
+        System.out.println("#                         #");
+        System.out.println("# BALANCE: "+ balance);
+        System.out.println("###########################");
+    }
+    
+    public void insert100p()
+    {
+        balance = balance + 100;
+        System.out.println("###########################");
+        System.out.println("# INSERTED: 100p          #");
+        System.out.println("#                         #");
+        System.out.println("# BALANCE: "+ balance);
+        System.out.println("###########################");
+    }
+    
+    public void insert200p()
+    {
+        balance = balance + 200;
+        System.out.println("###########################");
+        System.out.println("# INSERTED: 200p          #");
+        System.out.println("#                         #");
+        System.out.println("# BALANCE: "+ balance);
+        System.out.println("###########################");
     }
 }

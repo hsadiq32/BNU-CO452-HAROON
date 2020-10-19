@@ -22,3 +22,6 @@ Our avaiblable tickets are:
 # Price:       330p          #
 #Mon Oct 19 23:03:20 BST 2020#
 ##############################
+ticketMa1.printTicket("High Wycombe");
+INSUFFICIENT FUNDS
+You need 330p more to buy a High Wycombe ticket

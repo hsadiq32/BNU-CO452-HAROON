@@ -36,6 +36,7 @@ public class Course
         capacityCounter = 0;
         credits = 0;
         overallMark = 0;
+        moduleArray = new ArrayList<Module>();
     }
 
     public void addModule(Module module)

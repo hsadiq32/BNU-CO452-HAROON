@@ -48,6 +48,7 @@ public class Course
             capacityCounter = capacityCounter + 1;
             credits = credits + 15;
             overallMark = overallMark + module.getMark();
+            moduleArray.add(module);
             System.out.println(overallMark);
         }
         else

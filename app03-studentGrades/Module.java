@@ -27,12 +27,12 @@ public class Module
 
     public void printModule()
     {
-        System.out.println("┌─Module─────────────────┐");
-        System.out.println("► " + title + " ◄");
-        System.out.println("└───────────────────────┘");
-        System.out.println(" │ Module Code: " + moduleCode);
-        System.out.println(" │ Mark: " + mark + "/100");
-        System.out.println(" └─────────────────────┘");
+        System.out.println("│││┌─────────────────────┐");
+        System.out.println("│││■ Module:" + title);
+        System.out.println("│││└─┬───────────────────┘");
+        System.out.println("│││  │ Module ID:"+ moduleCode);
+        System.out.println("│││  │ Mark: " + mark + "/100");
+        System.out.println("│││  └──────────────────┘");
     }
 
     public String getTitle()

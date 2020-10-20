@@ -19,7 +19,15 @@ public class Course
     
     public int credits;
     
+    public int percentage;
+    
+    public String grade;
+    
     public Module module;
+    
+    public Module getTitle;
+    
+    public ArrayList<Module> moduleArray;
     
     public Course(String courseName, int NumberOfModules)
     {

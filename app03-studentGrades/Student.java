@@ -39,7 +39,13 @@ public class Student
      */
     public void printResults()
     {
-        this.course = course;
+        System.out.println("┌────────────────────────┐");
+        System.out.println("│▌                           │");
+        System.out.println("│▌ Name: " + name);
+        System.out.println("│▌ ID : " + id);
+        System.out.println("│▌                           │");
+        System.out.println("├────────────────────────┘");
+        course.printFinalGrade();
     }
 
     /**

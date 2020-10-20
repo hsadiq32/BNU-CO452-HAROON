@@ -87,6 +87,17 @@ public class Course
             {
                 grade = "Ungradable";
             }
+            System.out.println("││┌──────────────────────┐");
+            System.out.println("││■ Course: " + courseName);
+            System.out.println("││└─┬────────────────────┘");
+            System.out.println("││  │ Grade: " + grade);
+            System.out.println("││  │ Percentage: " + percentage + "%");
+            System.out.println("││  │ Credits: " + credits);
+            System.out.println("││  └───────────────────┘");
+            for(Module module : moduleArray) 
+            {
+                module.print();
+            }
         }
         else
         {

@@ -62,6 +62,31 @@ public class Course
         if(capacityCounter == capacity)
         {
             System.out.println("yes");
+            percentage = overallMark/capacity;
+            if(percentage <= 39)
+            {
+                grade = "F";
+            }
+            else if(percentage <= 49)
+            {
+                grade = "D";
+            }
+            else if(percentage <= 59)
+            {
+                grade = "C";
+            }
+            else if(percentage <= 69)
+            {
+                grade = "B";
+            }
+            else if(percentage <= 100)
+            {
+                grade = "A";
+            }
+            else
+            {
+                grade = "Ungradable";
+            }
         }
         else
         {

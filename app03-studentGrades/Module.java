@@ -25,7 +25,7 @@ public class Module
         this.mark = mark;
     }
 
-    public void printModule()
+    public void print()
     {
         System.out.println("│││┌─────────────────────┐");
         System.out.println("│││■ Module:" + title);

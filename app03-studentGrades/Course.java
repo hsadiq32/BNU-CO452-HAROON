@@ -116,7 +116,11 @@ public class Course
         }
         else
         {
-            System.out.println("");
+            System.out.println("││┌──────────────────────┐");
+            System.out.println("││■ Course: " + courseName);
+            System.out.println("││└─┬────────────────────┘");
+            System.out.println("││  │ Error: No data");
+            System.out.println("││  └───────────────────┘");
         }
     }
 }

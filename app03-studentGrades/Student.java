@@ -39,6 +39,7 @@ public class Student
      */
     public void printResults()
     {
+        course.printFinalGrade();
         System.out.println("┌────────────────────────┐");
         System.out.println("│▌                           │");
         System.out.println("│▌ Name: " + name);

@@ -1,6 +1,6 @@
 
 /**
- * Write a description of class Module here.
+ * Stores the data required for a module
  *
  * @author Haroon Sadiq
  * @version 20/10/2020
@@ -8,11 +8,11 @@
 
 public class Module
 {
-    // instance variables - replace the example below with your own
+    // The title of the module
     public String title;
-    
+    // The module ID
     public String moduleCode;
-    
+    // The module mark
     public int mark;
 
     /**
@@ -25,6 +25,9 @@ public class Module
         this.mark = mark;
     }
 
+    /**
+     * Prints module data
+     */
     public void print()
     {
         System.out.println("│││┌─────────────────────┐");
@@ -35,16 +38,25 @@ public class Module
         System.out.println("│││  └──────────────────┘");
     }
 
+    /**
+     * Returns the title of the module
+     */
     public String getTitle()
     {
         return title;
     }
     
+    /**
+     * Returns the ID of the module
+     */
     public String getmoduleCode()
     {
         return moduleCode;
     }
     
+    /**
+     * Returns the mark of the module
+     */
     public int getMark()
     {
         return mark;

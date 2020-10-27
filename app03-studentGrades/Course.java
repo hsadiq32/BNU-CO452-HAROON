@@ -1,6 +1,6 @@
 
 /**
- * Write a description of class Course here.
+ * The Course class holds the pack of module details, and works out the overall grade
  *
  * @author Haroon Sadiq
  * @version 20/10/2020
@@ -8,27 +8,30 @@
 import java.util.*;  
 public class Course
 {
-    // instance variables - replace the example below with your own
+    // The course name
     public String courseName;
-    
+    // The overall mark of all modules
     public int overallMark;
-    
+    // The max capacity of modules in the course
     public int capacity;
-    
+    // The keeps track of capacity to ensure no errors occur
     public int capacityCounter;
-    
+    // The amount of credits the student earns
     public int credits;
-    
+    // The overall percentage
     public int percentage;
-    
+    // The overall grade
     public String grade;
-    
+    // Links module dependencies
     public Module module;
-    
+    // Links the module getTitle function
     public Module getTitle;
-    
+    // Uses an array to store the module data
     public ArrayList<Module> moduleArray;
     
+    /**
+     * Create a new Course with added functionality of modifying the max module capacity
+     */
     public Course(String courseName, int NumberOfModules)
     {
         this.courseName = courseName;
@@ -40,6 +43,9 @@ public class Course
         moduleArray = new ArrayList<Module>();
     }
 
+    /**
+     * Adds the entered module to the Course
+     */
     public void addModule(Module module)
     {
         if(capacityCounter < capacity)
@@ -72,6 +78,9 @@ public class Course
         }
     }
     
+    /**
+     * Detects if all modules are added to capacity then works out grade and grabs module data to stitch together and print
+     */
     public void printFinalGrade()
     {
         if(capacityCounter == capacity)

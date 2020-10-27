@@ -15,7 +15,7 @@ public class Student
     private String id;
     // the amount of credits for study taken so far
     private int credits;
-    
+    //Links course dependencies
     public Course course;
     /**
      * Create a new student with a given name and ID number.
@@ -27,7 +27,7 @@ public class Student
     }
     
     /**
-     * 
+     * Enrolls a Student to the given course
      */
     public void enrollStudent(Course course)
     {
@@ -35,7 +35,7 @@ public class Student
     }
     
      /**
-     * 
+     * Prints their name and ID then their course, overall grade, overall percentage, credits, and finally their results for each module
      */
     public void printResults()
     {

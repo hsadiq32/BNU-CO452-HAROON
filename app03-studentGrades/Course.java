@@ -2,8 +2,8 @@
 /**
  * Write a description of class Course here.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Haroon Sadiq
+ * @version 20/10/2020
  */
 import java.util.*;  
 public class Course

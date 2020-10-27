@@ -49,11 +49,26 @@ public class Course
             credits = credits + 15;
             overallMark = overallMark + module.getMark();
             moduleArray.add(module);
-            System.out.println(overallMark);
+            System.out.println(" ───────────────────");
+            System.out.println(" Task Successful");
+            System.out.println(" ───────────────────");
+        }
+        else if(capacityCounter >= capacity)
+        {
+            System.out.println(" ───────────────────");
+            System.out.println("  Unable to add Module");
+            System.out.println();
+            System.out.println("  Max Course capacity");
+            System.out.println("  reached");
+            System.out.println(" ───────────────────");
         }
         else
         {
-            System.out.println("hh");
+            System.out.println(" ───────────────────");
+            System.out.println("  Unable to add Module");
+            System.out.println();
+            System.out.println("  Internal Error");
+            System.out.println(" ───────────────────");
         }
     }
     

@@ -5,3 +5,10 @@ Module module1 = new Module("Networking", "C1", 24);
 Module module2 = new Module("Programming", "C2", 67);
 Module module3 = new Module("Computer Systems", "C3", 88);
 Module module4 = new Module("Ethical and Legal Impacts", "C4", 95);
+module1.print();
+│││┌─────────────────────┐
+│││■ Module:Networking
+│││└─┬───────────────────┘
+│││  │ Module ID:C1
+│││  │ Mark: 24/100
+│││  └──────────────────┘

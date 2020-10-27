@@ -33,3 +33,19 @@ module4.print();
 │││  │ Module ID:C4
 │││  │ Mark: 95/100
 │││  └──────────────────┘
+course1.addModule(module1);
+ ───────────────────
+ Task Successful
+ ───────────────────
+course1.addModule(module2);
+ ───────────────────
+ Task Successful
+ ───────────────────
+course1.addModule(module3);
+ ───────────────────
+ Task Successful
+ ───────────────────
+course1.addModule(module4);
+ ───────────────────
+ Task Successful
+ ───────────────────

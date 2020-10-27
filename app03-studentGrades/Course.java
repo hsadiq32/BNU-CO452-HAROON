@@ -76,7 +76,6 @@ public class Course
     {
         if(capacityCounter == capacity)
         {
-            System.out.println("yes");
             percentage = overallMark/capacity;
             if(percentage <= 39)
             {

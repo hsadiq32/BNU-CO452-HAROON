@@ -26,3 +26,10 @@ module3.print();
 │││  │ Module ID:C3
 │││  │ Mark: 88/100
 │││  └──────────────────┘
+module4.print();
+│││┌─────────────────────┐
+│││■ Module:Ethical and Legal Impacts
+│││└─┬───────────────────┘
+│││  │ Module ID:C4
+│││  │ Mark: 95/100
+│││  └──────────────────┘

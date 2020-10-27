@@ -49,3 +49,10 @@ course1.addModule(module4);
  ───────────────────
  Task Successful
  ───────────────────
+course1.addModule(module1);
+ ───────────────────
+  Unable to add Module
+
+  Max Course capacity
+  reached
+ ───────────────────

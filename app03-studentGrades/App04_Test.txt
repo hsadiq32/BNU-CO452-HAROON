@@ -1,3 +1,7 @@
 Student student1 = new Student("John Smith", "ID1");
 Course course1 = new Course("Computing", 4);
 student1.enrollStudent(course1);
+Module module1 = new Module("Networking", "C1", 24);
+Module module2 = new Module("Programming", "C2", 67);
+Module module3 = new Module("Computer Systems", "C3", 88);
+Module module4 = new Module("Ethical and Legal Impacts", "C4", 95);

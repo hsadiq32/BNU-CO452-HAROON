@@ -88,7 +88,7 @@ public class StockManager
             if(product.getID() == id)
             { 
                 //found it!
-                product.toString();
+                System.out.println(product.toString());
             }
             else
             { 

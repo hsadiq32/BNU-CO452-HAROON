@@ -1,4 +1,4 @@
-import java.util.ArrayList;
+import java.util.*;
 
 /**
  * Manage the stock in a business.
@@ -11,7 +11,10 @@ public class StockManager
 {
     // A list of the products.
     private ArrayList<Product> stock;
-
+    
+    private Product product;
+   
+    
     /**
      * Initialise the stock manager.
      */
@@ -21,12 +24,11 @@ public class StockManager
     }
 
     /**
-     * Add a product to the list.
-     * @param item The item to be added.
+     * Adds a product to the list.
      */
-    public void addProduct(Product item)
+    public void addProduct(Product product)
     {
-        stock.add(item);
+        stock.add(product);
     }
     
     /**
@@ -59,7 +61,7 @@ public class StockManager
             product.sellOne();
             printProduct(id);
         }
-    }    
+    }     
 
     
     /**
@@ -107,4 +109,18 @@ public class StockManager
 
         System.out.println();
     }
+    
+    public void renameProduct(int id, String newName)
+    {
+        Product product = findProduct(id);
+        if(product != null) 
+        {
+            product.replaceName(newName);
+        }
+        else
+        {
+            System.out.println("Invalid ID");
+        }
+    }
 }
+    

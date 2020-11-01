@@ -133,5 +133,10 @@ public class StockManager
             }
         }
     }
+    
+    public void removeProduct(int id)
+    {
+        stock.removeIf(product -> product.getID() == id);
+    }
 }
     

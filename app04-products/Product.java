@@ -7,11 +7,11 @@
 public class Product
 {
     // An identifying number for this product.
-    public int id;
+    private int id;
     // The name of this product.
-    public String name;
+    private String name;
     // The quantity of this product in stock.
-    public int quantity;
+    private int quantity;
 
     /**
      * Constructor for objects of class Product.
@@ -94,8 +94,8 @@ public class Product
         }
     }
     
-    public void replaceName(String name)
+    public void replaceName(String newName)
     {
-        this.name = name;
+        name = newName;
     }
 }

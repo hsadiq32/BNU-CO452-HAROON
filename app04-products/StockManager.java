@@ -83,11 +83,18 @@ public class StockManager
      */
     public void printProduct(int id)
     {
-        Product product = findProduct(id);
-        
-        if(product != null) 
-        {
-            System.out.println(product.toString());
+        for(Product product : stock) 
+        { 
+            if(product.getID() == id)
+            { 
+                //found it!
+                product.toString();
+            }
+            else
+            { 
+                //found it!
+                System.out.println("Invalid ID");
+            }
         }
     }
     

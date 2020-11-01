@@ -15,12 +15,20 @@ public class StockDemo
      * Create a StockManager and populate it with a few
      * sample products.
      */
-    public StockDemo()
+    public StockDemo(StockManager manager)
     {
-        manager = new StockManager();
-        manager.addProduct(new Product(132, "Clock Radio"));
-        manager.addProduct(new Product(37,  "Mobile Phone"));
-        manager.addProduct(new Product(23,  "Microwave Oven"));
+        this.manager = manager;
+        manager.addProduct(new Product(12, "Google Pixel 5"));
+        manager.addProduct(new Product(13, "GoPro HERO9 Black"));
+        manager.addProduct(new Product(14, "Apple Watch Series 6"));
+        manager.addProduct(new Product(15, "Oculus Quest 2"));
+        manager.addProduct(new Product(16, "2020 iPad Air"));
+        manager.addProduct(new Product(17, "Canon EOS R5"));
+        manager.addProduct(new Product(18, "Samsung 49-Inch Curved Gaming Monitor"));
+        manager.addProduct(new Product(19, "SanDisk 1TB SD Card"));
+        manager.addProduct(new Product(20, "Microsoft Surface Headphones 2"));
+        manager.addProduct(new Product(21, "Fujifilm X100V"));
+        manager.addProduct(new Product(22, "iPhone SE"));
     }
     
     /**

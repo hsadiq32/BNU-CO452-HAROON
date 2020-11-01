@@ -112,14 +112,18 @@ public class StockManager
     
     public void renameProduct(int id, String newName)
     {
-        Product product = findProduct(id);
-        if(product != null) 
-        {
-            product.replaceName(newName);
-        }
-        else
-        {
-            System.out.println("Invalid ID");
+        for(Product product : stock) 
+        { 
+            if(product.getID() == id)
+            { 
+                //found it!
+                product.replaceName(newName);
+            }
+            else
+            { 
+                //found it!
+                System.out.println("Invalid ID");
+            }
         }
     }
 }

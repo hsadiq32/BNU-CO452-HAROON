@@ -13,6 +13,8 @@ public class StockManager
     private ArrayList<Product> stock;
     
     private Product product;
+    
+    private int productQuantity;
    
     
     /**
@@ -115,6 +117,25 @@ public class StockManager
         }
 
         System.out.println();
+    }
+    
+    public void deliverProduct(int id, int quantity)
+    {
+        for(Product product : stock) 
+        { 
+            if(product.getID() == id)
+            { 
+                //found it!
+                productQuantity = product.getQuantity();
+                quantity = productQuantity + quantity;
+                product.replaceQuantity(quantity);
+            }
+            else
+            { 
+                //found it!
+                System.out.println("Invalid ID");
+            }
+        }
     }
     
     public void renameProduct(int id, String newName)

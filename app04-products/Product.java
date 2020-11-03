@@ -98,4 +98,9 @@ public class Product
     {
         name = newName;
     }
+    
+    public void replaceQuantity(int newQuantity)
+    {
+        quantity = newQuantity;
+    }
 }

@@ -38,14 +38,17 @@ public class StockDemo
      */
     public void demoDeliverProduct()
     {
-        // Show details of all of the products before delivery.
-        manager.printProduct(101);
-        
-        // Take delivery of 5 items of one of the products.
-        manager.delivery(101, 5);
-        
-        // Show the list of all products after delivery
-        manager.printProduct(101);
+        manager.deliverProduct(12, 6);
+        manager.deliverProduct(13, 7);
+        manager.deliverProduct(14, 2);
+        manager.deliverProduct(15, 8);
+        manager.deliverProduct(16, 5);
+        manager.deliverProduct(17, 5);
+        manager.deliverProduct(18, 6);
+        manager.deliverProduct(19, 8);
+        manager.deliverProduct(20, 7);
+        manager.deliverProduct(21, 7);
+        manager.deliverProduct(22, 9);
     }
     
 

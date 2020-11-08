@@ -11,3 +11,20 @@ demo.runDemo("iPh");
 You searched: 'iPh'
 ======================================
 
+======================================
+         Peacock's Stock List         
+======================================
+
+12: Google Pixel 5 stock level: 0
+13: GoPro HERO9 Black stock level: 0
+14: Apple Watch Series 6 stock level: 0
+15: Oculus Quest 2 stock level: 0
+16: Dell 22-Inch Full HD Monitor stock level: 0
+17: Canon EOS R5 stock level: 0
+18: Samsung 49-Inch Curved Gaming Monitor stock level: 0
+19: SanDisk 1TB SD Card stock level: 0
+20: Microsoft Surface Headphones 2 stock level: 0
+21: Fujifilm X100V stock level: 0
+22: iPhone X stock level: 0
+======================================
+

@@ -300,3 +300,6 @@ stock.printAllProducts();
 stock.sellProduct(21, 17);
 Not enough stock available for inputted quantity
 
+stock.sellProduct(123, 12);
+Invalid ID
+

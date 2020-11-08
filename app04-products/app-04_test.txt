@@ -297,3 +297,6 @@ stock.printAllProducts();
 22: Samsung Galaxy S20 stock level: 4
 ======================================
 
+stock.sellProduct(21, 17);
+Not enough stock available for inputted quantity
+

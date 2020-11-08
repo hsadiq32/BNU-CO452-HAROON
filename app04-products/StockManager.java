@@ -186,3 +186,31 @@ public class StockManager
         System.out.println("======================================");
         System.out.println();
     }
+    
+    /**
+     * Searches product quantity through a loop with if statement to filter low stock
+     * Includes an error system using if and else statements for easy user troubleshooting
+     */
+    public void lowStockFinder()
+    {
+        boolean resultSearch = false;
+        System.out.println("======================================");
+        System.out.println("           Low Stock Products         ");
+        System.out.println("======================================");
+        System.out.println();
+        for(Product product : stock) 
+        { 
+            if(product.getQuantity() <= 5)
+            {
+                resultSearch = true;
+                System.out.println(product.toString());
+            }
+        }
+        if(resultSearch == false)
+        {
+            System.out.println("No Low Stock Products found");
+        }
+        System.out.println("======================================");
+        System.out.println();
+    }
+}

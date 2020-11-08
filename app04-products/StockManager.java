@@ -34,39 +34,6 @@ public class StockManager
     }
     
     /**
-     * Receive a delivery of a particular product.
-     * Increase the quantity of the product by the given amount.
-     * @param id The ID of the product.
-     * @param amount The amount to increase the quantity by.
-     */
-    public void delivery(int id, int amount)
-    {
-    }
-    
-    public Product findProduct(int id)
-    {
-        return null;
-    }
-    
-    /**
-     * Sell one of the given item.
-     * Show the before and after status of the product.
-     * @param id The ID of the product being sold.
-     */
-    public void sellProduct(int id)
-    {
-        Product product = findProduct(id);
-        
-        if(product != null) 
-        {
-            printProduct(id);
-            product.sellOne();
-            printProduct(id);
-        }
-    }     
-
-    
-    /**
      * Locate a product with the given ID, and return how
      * many of this item are in stock. If the ID does not
      * match any product, return zero.
@@ -119,16 +86,45 @@ public class StockManager
         System.out.println();
     }
     
-    public void deliverProduct(int id, int quantity)
+    /**
+     * Receive a delivery of a particular product.
+     * Increase the quantity of the product by the given amount.
+     * @param id The ID of the product.
+     * @param amount The amount to increase the quantity by.
+     */
+    public void deliverProduct(int id, int quantity)   
     {
+        boolean resultSearch = false;
+        String productName = null;
+        int oldQuantity = 0;
+        int newQuantity = 0;
         for(Product product : stock) 
         { 
             if(product.getID() == id)
             { 
-                //found it!
-                productQuantity = product.getQuantity();
-                quantity = productQuantity + quantity;
+                resultSearch = true;
+                oldQuantity = product.getQuantity();
+                quantity = product.getQuantity() + quantity;
+                productName = product.getName();
                 product.replaceQuantity(quantity);
+                newQuantity = product.getQuantity();
+            }
+        }
+        if(resultSearch  == true)
+        {
+            System.out.println("======================================");
+            System.out.println("Delivered: " + productName);
+            System.out.println("======================================");
+            System.out.println("Quantity Delivered : " + quantity);
+            System.out.println("Stock level        : " + oldQuantity + " --> " + newQuantity);
+            System.out.println("======================================");
+        }
+        else
+        {
+            System.out.println("Invalid ID");
+        }
+        System.out.println();
+    }
             }
             else
             { 

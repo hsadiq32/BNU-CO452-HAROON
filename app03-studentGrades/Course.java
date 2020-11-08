@@ -1,6 +1,6 @@
 
 /**
- * The Course class holds the pack of module details, and works out the overall grade
+ * The Course class holds the pack of module details, and works out the overall finalGrade
  *
  * @author Haroon Sadiq
  * @version 20/10/2020
@@ -11,7 +11,7 @@ public class Course
     // The course name
     public String courseName;
     // The overall mark of all modules
-    public int overallMark;
+    public int finalMark;
     // The max capacity of modules in the course
     public int capacity;
     // The keeps track of capacity to ensure no errors occur
@@ -20,14 +20,21 @@ public class Course
     public int credits;
     // The overall percentage
     public int percentage;
-    // The overall grade
-    public String grade;
+    // The overall finalGrade
+    public String finalGrade;
     // Links module dependencies
     public Module module;
     // Links the module getTitle function
     public Module getTitle;
     // Uses an array to store the module data
     public ArrayList<Module> moduleArray;
+    
+    // Declares module variables
+    private Module m1;
+    private Module m2;
+    private Module m3;
+    private Module m4;
+    
     
     /**
      * Create a new Course with added functionality of modifying the max module capacity
@@ -37,10 +44,21 @@ public class Course
         this.courseName = courseName;
         capacity = NumberOfModules;
         capacityCounter = 0;
-        credits = 0;
-        overallMark = 0;
-        grade = "Pending";
+        this.finalMark = 0;
+        this.finalGrade = "Pending";
         moduleArray = new ArrayList<Module>();
+        createModules();
+    }
+    
+    /**
+     * Creates 4 new modules, assigned to the given variables
+     */
+    public void createModules()
+    {
+        m1 = new Module("Algorithms", "C1");
+        m2 = new Module("Programming", "C2");
+        m3 = new Module("Computer Systems", "C3");
+        m4 = new Module("Computer Networks", "C4");
     }
 
     /**
@@ -53,7 +71,7 @@ public class Course
             this.module = module;
             capacityCounter = capacityCounter + 1;
             credits = credits + 15;
-            overallMark = overallMark + module.getMark();
+            finalMark = finalMark + module.getMark();
             moduleArray.add(module);
             System.out.println(" ───────────────────");
             System.out.println(" Task Successful");
@@ -79,41 +97,41 @@ public class Course
     }
     
     /**
-     * Detects if all modules are added to capacity then works out grade and grabs module data to stitch together and print
+     * Detects if all modules are added to capacity then works out finalGrade and grabs module data to stitch together and print
      */
-    public void printFinalGrade()
+    public void printFinalfinalGrade()
     {
         if(capacityCounter == capacity)
         {
-            percentage = overallMark/capacity;
+            percentage = finalMark/capacity;
             if(percentage <= 39)
             {
-                grade = "F";
+                finalGrade = "F";
             }
             else if(percentage <= 49)
             {
-                grade = "D";
+                finalGrade = "D";
             }
             else if(percentage <= 59)
             {
-                grade = "C";
+                finalGrade = "C";
             }
             else if(percentage <= 69)
             {
-                grade = "B";
+                finalGrade = "B";
             }
             else if(percentage <= 100)
             {
-                grade = "A";
+                finalGrade = "A";
             }
             else
             {
-                grade = "Ungradable";
+                finalGrade = "Ungradable";
             }
             System.out.println("││┌──────────────────────┐");
             System.out.println("││■ Course: " + courseName);
             System.out.println("││└─┬────────────────────┘");
-            System.out.println("││  │ Grade: " + grade);
+            System.out.println("││  │ finalGrade: " + finalGrade);
             System.out.println("││  │ Percentage: " + percentage + "%");
             System.out.println("││  │ Credits: " + credits);
             System.out.println("││  └───────────────────┘");

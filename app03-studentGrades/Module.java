@@ -13,16 +13,25 @@ public class Module
     // The module ID
     public String moduleCode;
     // The module mark
-    public int mark;
-
+    private int mark;
+    // The course credits
+    private int credit;
+    // True or false statement on module pass
+    private boolean passed;
+    // True or false statement on module completion
+    private boolean completed;
     /**
      * Constructor for objects of class Module
      */
-    public Module(String title,String moduleCode, int mark)
+    public Module(String title, String moduleCode)
     {
         this.title = title;
         this.moduleCode = moduleCode;
         this.mark = mark;
+        credit = 15;
+        mark = -1;
+        passed = false;
+        completed = false;
     }
 
     /**
@@ -60,5 +69,18 @@ public class Module
     public int getMark()
     {
         return mark;
+    }
+    
+    public void awardMark(int mark)
+    {
+        this.mark = mark;
+    }
+    
+    /**
+     * Returns mark on module completion
+     */
+    public boolean moduleCompletion()
+    {
+        return mark >= 0;
     }
 }

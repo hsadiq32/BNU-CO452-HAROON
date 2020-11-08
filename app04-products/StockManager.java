@@ -134,21 +134,33 @@ public class StockManager
         }
     }
     
+    /**
+     * Renames a product using its ID as an identifier
+     * An error is reported if there appears to be no stock.
+     * Includes an error system using if and else statements for easy user troubleshooting
+     */
     public void renameProduct(int id, String newName)
     {
+        boolean resultSearch = false;
+        String oldName = null;
         for(Product product : stock) 
         { 
             if(product.getID() == id)
             { 
-                //found it!
+                resultSearch = true;
+                oldName = product.getName();
                 product.replaceName(newName);
             }
-            else
-            { 
-                //found it!
-                System.out.println("Invalid ID");
-            }
         }
+        if(resultSearch  == true)
+        {
+            System.out.println("Replaced '" + oldName + "' with '" + newName + "'");
+        }
+        else
+        {
+            System.out.println("Invalid ID");
+        }
+        System.out.println();
     }
     
     public void removeProduct(int id)

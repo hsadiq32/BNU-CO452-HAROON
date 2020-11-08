@@ -36,19 +36,12 @@ public class StockDemo
      * might be used. Details of one product are shown, the
      * product is restocked, and then the details are shown again.
      */
-    public void demoDeliverProduct()
+    public void demoDelivery()
     {
-        manager.deliverProduct(12, 6);
-        manager.deliverProduct(13, 7);
-        manager.deliverProduct(14, 2);
-        manager.deliverProduct(15, 8);
-        manager.deliverProduct(16, 5);
-        manager.deliverProduct(17, 5);
-        manager.deliverProduct(18, 6);
-        manager.deliverProduct(19, 8);
-        manager.deliverProduct(20, 7);
-        manager.deliverProduct(21, 7);
-        manager.deliverProduct(22, 9);
+        for(int id =12; id <= 22; id++)
+        {
+            manager.deliverProduct(id, rand.nextInt(12) + 1);
+        }
     }
     
     /**

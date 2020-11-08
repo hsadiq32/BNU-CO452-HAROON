@@ -250,3 +250,9 @@ stock.findProduct("Curv");
             Product Search            
 ======================================
 
+18: Samsung 49-Inch Curved Gaming Monitor stock level: 0
+
+======================================
+You searched: 'Curv'
+======================================
+

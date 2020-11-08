@@ -1,3 +1,13 @@
 StockManager stock = new StockManager();
 StockDemo demo = new StockDemo(stock);
 demo.runDemo("iPh");
+======================================
+            Product Search            
+======================================
+
+22: iPhone X stock level: 0
+
+======================================
+You searched: 'iPh'
+======================================
+

@@ -125,13 +125,55 @@ public class StockManager
         }
         System.out.println();
     }
+    public void sellProduct(int id, int sellQuantity)
+    {
+        boolean resultSearch = false;
+        boolean error = false;
+        String productName = null;
+        int oldQuantity = 0;
+        int newQuantity = 0;
+        for(Product product : stock) 
+        {
+            if(product.getID() == id)
+            {
+                int quantity = product.getQuantity();
+                if(quantity >= sellQuantity) 
+                {
+                    resultSearch = true;
+                    oldQuantity = product.getQuantity();
+                    quantity = quantity - sellQuantity;
+                    product.replaceQuantity(quantity);
+                    newQuantity = product.getQuantity();
+                    productName = product.getName();
+                }
+                else
+                {
+                    error = true;
+                }
             }
             else
-            { 
-                //found it!
-                System.out.println("Invalid ID");
+            {
+                error = false;
             }
         }
+        if(resultSearch  == true)
+        {
+            System.out.println("======================================");
+            System.out.println("Sold: " + productName);
+            System.out.println("======================================");
+            System.out.println("Quantity Sold : " + sellQuantity);
+            System.out.println("Stock level   : " + oldQuantity + " --> " + newQuantity);
+            System.out.println("======================================");
+        }
+        else if(error = true)
+        {
+            System.out.println("Not enough stock available for inputted quantity");
+        }
+        else
+        {
+            System.out.println("Invalid ID");
+        }
+        System.out.println();
     }
     
     /**

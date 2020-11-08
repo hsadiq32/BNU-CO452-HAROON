@@ -1,1 +1,2 @@
 StockManager stock = new StockManager();
+StockDemo demo = new StockDemo(stock);

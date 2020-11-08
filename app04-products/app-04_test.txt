@@ -221,3 +221,32 @@ stock.printAllProducts();
 22: Samsung Galaxy S20 stock level: 4
 ======================================
 
+stock.findProduct("Monitor");
+======================================
+            Product Search            
+======================================
+
+16: Dell 22-Inch Full HD Monitor stock level: 3
+18: Samsung 49-Inch Curved Gaming Monitor stock level: 0
+
+======================================
+You searched: 'Monitor'
+======================================
+
+stock.findProduct("Samsung");
+======================================
+            Product Search            
+======================================
+
+18: Samsung 49-Inch Curved Gaming Monitor stock level: 0
+22: Samsung Galaxy S20 stock level: 4
+
+======================================
+You searched: 'Samsung'
+======================================
+
+stock.findProduct("Curv");
+======================================
+            Product Search            
+======================================
+

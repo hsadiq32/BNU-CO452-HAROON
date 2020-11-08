@@ -1,7 +1,9 @@
+import java.util.*;
 /**
  * Model some details of a product sold by a company.
  * 
  * @author David J. Barnes and Michael Kölling.
+ * @modified Haroon Sadiq
  * @version 2016.02.29
  */
 public class Product
@@ -12,12 +14,13 @@ public class Product
     private String name;
     // The quantity of this product in stock.
     private int quantity;
-
+    
     /**
      * Constructor for objects of class Product.
      * The initial stock quantity is zero.
      * @param id The product's identifying number.
      * @param name The product's name.
+     * @param quantity The product's stock level.
      */
     public Product(int id, String name)
     {
@@ -78,14 +81,14 @@ public class Product
     }
 
     /**
-     * Sell one of these products.
+     * Sell a specified quantity of a product.
      * An error is reported if there appears to be no stock.
      */
-    public void sellOne()
+    public void sellProduct(int sellQuantity)
     {
-        if(quantity > 0) 
+        if(quantity > sellQuantity) 
         {
-            quantity--;
+            quantity = quantity - sellQuantity;
         }
         else 
         {
@@ -94,11 +97,17 @@ public class Product
         }
     }
     
+    /**
+     * Replaces name, requires a string input 
+     */
     public void replaceName(String newName)
     {
         name = newName;
     }
     
+    /**
+     * Replaces quantity, requires a integer input 
+     */
     public void replaceQuantity(int newQuantity)
     {
         quantity = newQuantity;

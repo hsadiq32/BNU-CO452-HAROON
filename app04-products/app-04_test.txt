@@ -332,3 +332,14 @@ stock.printProduct(20);
 20: Microsoft Surface Headphones 2 stock level: 1
 stock.printProduct(27);
 Invalid ID
+stock.findProduct("Product Name which does not exist for test");
+======================================
+            Product Search            
+======================================
+
+No Products found
+
+======================================
+You searched: 'Product Name which does not exist for test'
+======================================
+

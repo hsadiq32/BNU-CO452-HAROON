@@ -51,7 +51,24 @@ public class StockDemo
         manager.deliverProduct(22, 9);
     }
     
-
+    /**
+     * Provide a very simple demonstration of how a StockManager
+     * might be used. Details of one product are shown
+     * Uses a for loop and iterates ID to go through all data
+     * Scans for the IDs max quantity avoiding any overselling
+     */
+    public void demoSell()
+    {
+        for(int id =12; id <= 22; id++)
+        {   
+            int stockQuantity = manager.numberInStock(id);
+            if(stockQuantity < 1)
+            {
+                stockQuantity = 1;
+            }
+            manager.sellProduct(id, rand.nextInt(stockQuantity) + 1);
+        }
+    }
     
     /**
      * Runs all key tasks with the demo data provided

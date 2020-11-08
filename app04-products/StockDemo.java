@@ -53,4 +53,14 @@ public class StockDemo
     
 
     
+    /**
+     * Runs all key tasks with the demo data provided
+     */
+    public void runDemo(String findName)
+    {
+        manager.findProduct(findName);
+        manager.printAllProducts();
+        demoDelivery();
+        demoSell();
+    }
 }

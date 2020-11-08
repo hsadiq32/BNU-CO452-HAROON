@@ -156,4 +156,33 @@ public class StockManager
         stock.removeIf(product -> product.getID() == id);
     }
 }
-    
+        
+    /**
+     * Finds a product using syntax similar to arraylist items
+     * Includes an error system using if and else statements for easy user troubleshooting
+     */
+    public void findProduct(String name)
+    {
+        boolean resultSearch = false;
+        System.out.println("======================================");
+        System.out.println("            Product Search            ");
+        System.out.println("======================================");
+        System.out.println();
+        for(Product product : stock) 
+        { 
+            if(product.getName().contains(name))
+            {
+                resultSearch = true;
+                System.out.println(product.toString());
+            }
+        }
+        if(resultSearch == false)
+        {
+            System.out.println("No Products found");
+        }
+        System.out.println();
+        System.out.println("======================================");
+        System.out.println("You searched: '" + name + "'");
+        System.out.println("======================================");
+        System.out.println();
+    }

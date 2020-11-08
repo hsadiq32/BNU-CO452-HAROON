@@ -1,21 +1,19 @@
 import java.util.*;
-
 /**
  * Manage the stock in a business.
  * The stock is described by zero or more Products.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Haroon Sadiq 
+ * @version 05/11/2020
  */
 public class StockManager
 {
     // A list of the products.
     private ArrayList<Product> stock;
-    
+    // Links Product class dependencies
     private Product product;
-    
-    private int productQuantity;
-   
+    // The quantity of products sold
+    private int sellQuantity;
     
     /**
      * Initialise the stock manager.
@@ -26,7 +24,7 @@ public class StockManager
     }
 
     /**
-     * Adds a product to the list.
+     * Adds a product to the arraylist.
      */
     public void addProduct(Product product)
     {
@@ -42,28 +40,42 @@ public class StockManager
      */
     public int numberInStock(int id)
     {
-        return 0;
-    }
-
-    /**
-     * Print details of the given product. If found,
-     * its name and stock quantity will be shown.
-     * @param id The ID of the product to look for.
-     */
-    public void printProduct(int id)
-    {
+        int quantityAmount = 0;
         for(Product product : stock) 
         { 
             if(product.getID() == id)
             { 
-                //found it!
-                System.out.println(product.toString());
+                quantityAmount = product.getQuantity();
             }
-            else
+        }
+        return quantityAmount;
+    }
+    
+    /**
+     * Print details of the given product. If found,
+     * its name and stock quantity will be shown.
+     * @param id The ID of the product to look for.
+     * Includes an error system using if and else statements for easy user troubleshooting
+     */
+    public void printProduct(int id)
+    {
+        boolean resultSearch = false;
+        String productString = null;
+        for(Product product : stock) 
+        { 
+            if(product.getID() == id)
             { 
-                //found it!
-                System.out.println("Invalid ID");
+                resultSearch =true;
+                productString = product.toString();
             }
+        }
+        if(resultSearch  == true)
+        {
+            System.out.println(productString);
+        }
+        else
+        {
+            System.out.println("Invalid ID");
         }
     }
     
@@ -73,16 +85,16 @@ public class StockManager
      */
     public void printAllProducts()
     {
-        System.out.println();
-        System.out.println("Peacock's Stock List");
-        System.out.println("====================");
+        System.out.println("======================================");
+        System.out.println("         Peacock's Stock List         ");
+        System.out.println("======================================");
         System.out.println();
         
         for(Product product : stock)
         {
             System.out.println(product);
         }
-
+        System.out.println("======================================");
         System.out.println();
     }
     
@@ -125,6 +137,11 @@ public class StockManager
         }
         System.out.println();
     }
+    
+    /**
+     * Sell a specified quantity of a product.
+     * An error is reported if there appears to be no stock.
+     */
     public void sellProduct(int id, int sellQuantity)
     {
         boolean resultSearch = false;
@@ -205,12 +222,14 @@ public class StockManager
         System.out.println();
     }
     
+     /**
+     * Removes data from array list using the ID to locate the data
+     */
     public void removeProduct(int id)
     {
         stock.removeIf(product -> product.getID() == id);
     }
-}
-        
+    
     /**
      * Finds a product using syntax similar to arraylist items
      * Includes an error system using if and else statements for easy user troubleshooting

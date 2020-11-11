@@ -297,7 +297,7 @@ public class StockManager
         System.out.println();
         for(Product product : stock) 
         { 
-            if(product.getName().contains(name))
+            if(product.getName().toLowerCase().contains(name.toLowerCase()))
             {
                 resultSearch = true;
                 System.out.println(product.toString());
@@ -331,6 +331,30 @@ public class StockManager
             {
                 resultSearch = true;
                 System.out.println(product.toString());
+            }
+        }
+        if(resultSearch == false)
+        {
+            System.out.println("No Low Stock Products found");
+        }
+        System.out.println("======================================");
+        System.out.println();
+    }
+    
+    public void restockProducts()
+    {
+        boolean resultSearch = false;
+        System.out.println("======================================");
+        System.out.println("           Low Stock Products         ");
+        System.out.println("======================================");
+        System.out.println();
+        for(Product product : stock) 
+        { 
+            if(product.getQuantity() <= 5)
+            {
+                resultSearch = true;
+                int id = product.getID();
+                deliverProduct(id, 5);
             }
         }
         if(resultSearch == false)

@@ -14,8 +14,6 @@ public class StockApp
     
     private StockManager manager;
     
-    private Product product;
-    
     private StockDemo oldStock;
     
     /**
@@ -48,7 +46,7 @@ public class StockApp
         {
             printHeading();
             printMenuChoices();
-           
+            
             String choice = reader.getInput().toLowerCase();
             if(choice.equals("quit"))
             {
@@ -78,23 +76,41 @@ public class StockApp
         {
             printAllProducts();
         }
-        
+        else if(choice.equals("deliver"))
+        {
+            int id = Integer.parseInt(reader.getInput());
+            int quantity = Integer.parseInt(reader.getInput());
+            manager.deliverProduct(id, quantity);
+        }
+        else if(choice.equals("sell"))
+        {
+            int id = Integer.parseInt(reader.getInput());
+            int quantity = Integer.parseInt(reader.getInput());
+            manager.sellProduct(id, quantity);
+        }
+        else if(choice.equals("search"))
+        {
+            String search = reader.getInput();
+            manager.findProduct(search);
+        }
+        else if(choice.equals("lowstock"))
+        {
+            manager.lowStockFinder();
+        }
+        else if(choice.equals("restock"))
+        {
+            manager.restockProducts();
+        }
     }
     
     private void addProduct()
     {
         System.out.println("/nAdd new Product:\n");
-        
-        System.out.println("/nID:\n");
-        String value = reader.getInput();
-        int id = Integer.parseInt(value);
-        
-        System.out.println("/nName:\n");
+        System.out.println("Enter ID\n");
+        int id = Integer.parseInt(reader.getInput());
+        System.out.println("Enter Name\n");
         String name = reader.getInput();
-        
-        Product product = new Product(id, name);
-        System.out.println("Added:" + product);
-        manager.addProduct(product);
+        manager.addProduct(new Product(id, name));
     }
     
     private void removeProduct(int id)
@@ -112,12 +128,16 @@ public class StockApp
      */
     private void printMenuChoices()
     {
-        System.out.println();
         System.out.println("    Add:        Add a new product");
-        System.out.println("    Remove:     Remove an old product");
+        System.out.println("    Remove:     Remove a product");
         System.out.println("    PrintAll:   Print all products");
-        System.out.println("    Quit:       Quit the program");
-        System.out.println();        
+        System.out.println("    Deliver:    Deliver a product");
+        System.out.println("    Sell:       Sell a product");
+        System.out.println("    Search:     Search for a product");
+        System.out.println("    LowStock:   Find products with low stock");
+        System.out.println("    ReStock:    Restocks low-stock products");
+        System.out.println("    Quit:       Quit the program");    
+        System.out.println();
     }
     
     /**

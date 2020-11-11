@@ -26,10 +26,10 @@ public class StockManager
     /**
      * Adds a product to the arraylist.
      */
-    public void addProduct(Product product)
+    public void addProduct(int id, String name)
     {
+        Product product = new Product(id, name);
         boolean check = checkID(product.getID());
-        
         if(check == true)
         {
             System.out.println();
@@ -38,10 +38,10 @@ public class StockManager
         }
         else
         {
+            stock.add(product);
             System.out.println();
             System.out.println("Added Successfully");
             System.out.println();
-            stock.add(product);
         }
     }
     

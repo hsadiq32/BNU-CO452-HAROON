@@ -110,7 +110,7 @@ public class StockApp
         int id = Integer.parseInt(reader.getInput());
         System.out.println("Enter Name\n");
         String name = reader.getInput();
-        manager.addProduct(new Product(id, name));
+        manager.addProduct(id, name);
     }
     
     private void removeProduct(int id)

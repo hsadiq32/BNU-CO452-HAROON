@@ -21,17 +21,17 @@ public class StockDemo
     public StockDemo(StockManager manager)
     {
         this.manager = manager;
-        manager.addProduct(new Product(12, "Google Pixel 5"));
-        manager.addProduct(new Product(13, "GoPro HERO9 Black"));
-        manager.addProduct(new Product(14, "Apple Watch Series 6"));
-        manager.addProduct(new Product(15, "Oculus Quest 2"));
-        manager.addProduct(new Product(16, "Dell 22-Inch Full HD Monitor"));
-        manager.addProduct(new Product(17, "Canon EOS R5"));
-        manager.addProduct(new Product(18, "Samsung 49-Inch Curved Gaming Monitor"));
-        manager.addProduct(new Product(19, "SanDisk 1TB SD Card"));
-        manager.addProduct(new Product(20, "Microsoft Surface Headphones 2"));
-        manager.addProduct(new Product(21, "Fujifilm X100V"));
-        manager.addProduct(new Product(22, "iPhone X"));
+        manager.addProduct(12, "Google Pixel 5");
+        manager.addProduct(13, "GoPro HERO9 Black");
+        manager.addProduct(14, "Apple Watch Series 6");
+        manager.addProduct(15, "Oculus Quest 2");
+        manager.addProduct(16, "Dell 22-Inch Full HD Monitor");
+        manager.addProduct(17, "Canon EOS R5");
+        manager.addProduct(18, "Samsung 49-Inch Curved Gaming Monitor");
+        manager.addProduct(19, "SanDisk 1TB SD Card");
+        manager.addProduct(20, "Microsoft Surface Headphones 2");
+        manager.addProduct(21, "Fujifilm X100V");
+        manager.addProduct(22, "iPhone X");
     }
     
     /**

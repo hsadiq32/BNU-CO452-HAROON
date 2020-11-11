@@ -1,4 +1,3 @@
-import java.util.HashSet;
 import java.util.Scanner;
 
 /**
@@ -6,6 +5,7 @@ import java.util.Scanner;
  * The text typed by a user is returned.
  * 
  * @author     Michael Kölling and David J. Barnes
+ * @modified Haroon Sadiq
  * @version    0.1 (2016.02.29)
  */
 public class InputReader
@@ -30,7 +30,6 @@ public class InputReader
     {
         System.out.print("> ");         // print prompt
         String inputLine = reader.nextLine();
-
         return inputLine;
     }
 }

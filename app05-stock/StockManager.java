@@ -120,7 +120,7 @@ public class StockManager
     public void printAllProducts()
     {
         System.out.println("======================================");
-        System.out.println("         Peacock's Stock List         ");
+        System.out.println("              Stock List              ");
         System.out.println("======================================");
         System.out.println();
         
@@ -280,7 +280,7 @@ public class StockManager
         
         else
         {
-            System.out.println("Invalid ID");
+            System.out.println("ID Not Found");
         }
     }
     

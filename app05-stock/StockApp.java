@@ -9,6 +9,11 @@
  */
 public class StockApp
 {
+    public final String ADD = "add";
+    public final String REMOVE = "remove";
+    public final String PRINTALL = "printall";
+    private String [] menuChoices;
+    
     // Use to get user input
     private InputReader reader;
     
@@ -24,6 +29,23 @@ public class StockApp
         reader = new InputReader();
         manager = new StockManager();
         oldStock = new StockDemo(manager);
+        menuSetup();
+    }
+    
+    private void menuSetup()
+    {
+        menuChoices = new String []
+        {
+            "Add a new product",
+            "Remove a product",
+            "Print all products",
+            "Deliver a product",
+            "Sell a product",
+            "Search for a product",
+            "Find low-stock products",
+            "Restock low-stock products",
+            "Quit the program"   
+        };
     }
 
     /**
@@ -45,30 +67,27 @@ public class StockApp
         while(!finished)
         {
             printHeading();
-            printMenuChoices();
             
-            String choice = reader.getInput().toLowerCase();
-            if(choice.equals("quit"))
+            String choice = Menu.getMenuChoice(menuChoices);
+            executeMenuChoice(choice);
+            
+            if(choice.startsWith("quit"))
             {
                 finished = true;
             }
             
-            else
-            {
-                executeMenuChoice(choice);
-            }
         }
     }
     
     private void executeMenuChoice(String choice)
     {
-        if(choice.equals("add"))
+        if(choice.equals(ADD))
         {
             addProduct();
         }
         else if(choice.equals("remove"))
         {
-            System.out.println("/nEnter ID\n");
+            System.out.println("n/Enter ID\n");
             int id = Integer.parseInt(reader.getInput());
             removeProduct(id);
         }
@@ -105,7 +124,7 @@ public class StockApp
     
     private void addProduct()
     {
-        System.out.println("/nAdd new Product:\n");
+        System.out.println("Add new Product:\n");
         System.out.println("Enter ID\n");
         int id = Integer.parseInt(reader.getInput());
         System.out.println("Enter Name\n");
@@ -128,15 +147,16 @@ public class StockApp
      */
     private void printMenuChoices()
     {
-        System.out.println("    Add:        Add a new product");
-        System.out.println("    Remove:     Remove a product");
-        System.out.println("    PrintAll:   Print all products");
-        System.out.println("    Deliver:    Deliver a product");
-        System.out.println("    Sell:       Sell a product");
-        System.out.println("    Search:     Search for a product");
-        System.out.println("    LowStock:   Find products with low stock");
-        System.out.println("    ReStock:    Restocks low-stock products");
-        System.out.println("    Quit:       Quit the program");    
+        System.out.println("  Add:        Add a new product");
+        System.out.println("  Remove:     Remove a product");
+        System.out.println("  PrintAll:   Print all products");
+        System.out.println("  Deliver:    Deliver a product");
+        System.out.println("  Sell:       Sell a product");
+        System.out.println("  Search:     Search for a product");
+        System.out.println("  LowStock:   Find products with low stock");
+        System.out.println("  ReStock:    Restocks low-stock products");
+        System.out.println("  Quit:       Quit the program");   
+        System.out.println("==============================================");
         System.out.println();
     }
     
@@ -145,9 +165,9 @@ public class StockApp
      */
     private void printHeading()
     {
-        System.out.println("******************************");
-        System.out.println(" Stock Management Application ");
-        System.out.println("    App05: by Haroon Sadiq");
-        System.out.println("******************************");
+        System.out.println("==============================================");
+        System.out.println("          Stock Management Application        ");
+        System.out.println("            App05: by Haroon Sadiq            ");
+        System.out.println("==============================================");
     }
 }

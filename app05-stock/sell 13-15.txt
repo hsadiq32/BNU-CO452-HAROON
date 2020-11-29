@@ -1,0 +1,84 @@
+sell
+|£| Enter ID:
+
+> 112
+|£| Enter Sell Quantity:
+
+> 2
+======================================
+|?| Sold: Samsung Galaxy S20
+======================================
+Quantity Sold : 2
+Stock level   : 8 --> 6
+======================================
+
+==============================================
+          Stock Management Application        
+            App05: by Haroon Sadiq            
+==============================================
+Enter the first word of the choice to run: 
+
+   Add a new product
+   Remove a product
+   Rename a product
+   Print all products
+   Deliver a product
+   Sell a product
+   Search for a product
+   Find low-stock products
+   Restock low-stock products
+   Quit the program
+==============================================
+> sell
+|£| Enter ID:
+
+> 112
+|£| Enter Sell Quantity:
+
+> 10
+|?| Not enough stock available for inputted quantity
+
+==============================================
+          Stock Management Application        
+            App05: by Haroon Sadiq            
+==============================================
+Enter the first word of the choice to run: 
+
+   Add a new product
+   Remove a product
+   Rename a product
+   Print all products
+   Deliver a product
+   Sell a product
+   Search for a product
+   Find low-stock products
+   Restock low-stock products
+   Quit the program
+==============================================
+> sell
+|£| Enter ID:
+
+> 112
+|£| Enter Sell Quantity:
+
+> -2
+|?| Invalid Inputted Quantity
+
+==============================================
+          Stock Management Application        
+            App05: by Haroon Sadiq            
+==============================================
+Enter the first word of the choice to run: 
+
+   Add a new product
+   Remove a product
+   Rename a product
+   Print all products
+   Deliver a product
+   Sell a product
+   Search for a product
+   Find low-stock products
+   Restock low-stock products
+   Quit the program
+==============================================
+> 

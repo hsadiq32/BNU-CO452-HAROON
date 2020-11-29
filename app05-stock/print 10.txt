@@ -1,0 +1,29 @@
+print
+======================================
+              Stock List              
+======================================
+
+111: Samsung Galaxy S10 stock level: 0
+112: Samsung Galaxy S20 stock level: 0
+114: Apple iPhone 12 stock level: 0
+115: Motorola G9 Plus stock level: 0
+======================================
+
+==============================================
+          Stock Management Application        
+            App05: by Haroon Sadiq            
+==============================================
+Enter the first word of the choice to run: 
+
+   Add a new product
+   Remove a product
+   Rename a product
+   Print all products
+   Deliver a product
+   Sell a product
+   Search for a product
+   Find low-stock products
+   Restock low-stock products
+   Quit the program
+==============================================
+> 

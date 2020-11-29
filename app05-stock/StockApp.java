@@ -7,7 +7,8 @@
  * @author Haroon Sadiq
  * @version 0.1
  */
-public class StockApp extends StockDemo {
+public class StockApp
+{
     //Stored menu choice options as variables
     public final String ADD = "add";
     public final String REMOVE = "remove";
@@ -38,7 +39,6 @@ public class StockApp extends StockDemo {
     {
         reader = new InputReader();
         manager = new StockManager();
-        oldStock = new StockDemo(manager);
         menuSetup();
     }
     
@@ -150,6 +150,11 @@ public class StockApp extends StockDemo {
             System.out.println("|∀| Max Quantity Restock Filter:\n");
             int amount = Integer.parseInt(reader.getInput());
             manager.restockProducts(amount);
+        }
+        
+        else if(choice.equals("demostock"))
+        {
+            oldStock = new StockDemo(manager);
         }
     }
     

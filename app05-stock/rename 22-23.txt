@@ -1,0 +1,53 @@
+rename
+|R| Enter ID:
+
+> 112
+|R| Enter New Name:
+
+> Pixel 4a
+|?| Replaced 'Samsung Galaxy S20' with 'Pixel 4a'
+
+==============================================
+          Stock Management Application        
+            App05: by Haroon Sadiq            
+==============================================
+Enter the first word of the choice to run: 
+
+   Add a new product
+   Remove a product
+   Rename a product
+   Print all products
+   Deliver a product
+   Sell a product
+   Search for a product
+   Find low-stock products
+   Restock low-stock products
+   Quit the program
+==============================================
+> rename
+|R| Enter ID:
+
+> 204
+|R| Enter New Name:
+
+> iPhone 3Gs
+|?| Invalid ID
+
+==============================================
+          Stock Management Application        
+            App05: by Haroon Sadiq            
+==============================================
+Enter the first word of the choice to run: 
+
+   Add a new product
+   Remove a product
+   Rename a product
+   Print all products
+   Deliver a product
+   Sell a product
+   Search for a product
+   Find low-stock products
+   Restock low-stock products
+   Quit the program
+==============================================
+> 

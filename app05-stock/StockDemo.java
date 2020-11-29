@@ -21,7 +21,7 @@ public class StockDemo
     public StockDemo(StockManager manager)
     {
         this.manager = manager;
-        manager.addProduct(12, "Google Pixel 5");
+        manager.addProduct(12, "Google Pixel 3");
         manager.addProduct(13, "GoPro HERO9 Black");
         manager.addProduct(14, "Apple Watch Series 6");
         manager.addProduct(15, "Oculus Quest 2");

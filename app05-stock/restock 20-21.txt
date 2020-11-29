@@ -1,0 +1,81 @@
+restock
+|?| Max Quantity Restock Filter:
+
+> 3
+======================================
+           Low Stock Products         
+======================================
+
+======================================
+|?| Delivered: Samsung Galaxy S10
+======================================
+Quantity Delivered : 5
+Stock level        : 0 --> 5
+======================================
+
+======================================
+|?| Delivered: Apple iPhone 12
+======================================
+Quantity Delivered : 5
+Stock level        : 0 --> 5
+======================================
+
+======================================
+|?| Delivered: Motorola G9 Plus
+======================================
+Quantity Delivered : 5
+Stock level        : 0 --> 5
+======================================
+
+======================================
+|?| Restocked products with 3 or less stock
+======================================
+
+==============================================
+          Stock Management Application        
+            App05: by Haroon Sadiq            
+==============================================
+Enter the first word of the choice to run: 
+
+   Add a new product
+   Remove a product
+   Rename a product
+   Print all products
+   Deliver a product
+   Sell a product
+   Search for a product
+   Find low-stock products
+   Restock low-stock products
+   Quit the program
+==============================================
+> restock
+|?| Max Quantity Restock Filter:
+
+> 2
+======================================
+           Low Stock Products         
+======================================
+
+|?| No Low Stock Products found
+======================================
+|?| Restocked products with 2 or less stock
+======================================
+
+==============================================
+          Stock Management Application        
+            App05: by Haroon Sadiq            
+==============================================
+Enter the first word of the choice to run: 
+
+   Add a new product
+   Remove a product
+   Rename a product
+   Print all products
+   Deliver a product
+   Sell a product
+   Search for a product
+   Find low-stock products
+   Restock low-stock products
+   Quit the program
+==============================================
+> 

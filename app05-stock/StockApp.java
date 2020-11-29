@@ -7,23 +7,28 @@
  * @author Haroon Sadiq
  * @version 0.1
  */
-public class StockApp
-{
+public class StockApp extends StockDemo {
+    //Stored menu choice options as variables
     public final String ADD = "add";
     public final String REMOVE = "remove";
+    public final String RENAME = "rename";
     public final String PRINTALL = "print";
     public final String DELIVER = "deliver";
     public final String SELL = "sell";
     public final String SEARCH = "search";
     public final String FIND = "find";
     public final String RESTOCK = "restock";
+    
+    //Sets the array for menu choice
     private String [] menuChoices;
     
     // Use to get user input
     private InputReader reader;
     
+    // Imports StockManager dependencies
     private StockManager manager;
     
+    // Imports StockDemo dependencies
     private StockDemo oldStock;
     
     /**
@@ -37,12 +42,16 @@ public class StockApp
         menuSetup();
     }
     
+    /**
+     * Contains a string array for the menu text
+     */
     private void menuSetup()
     {
         menuChoices = new String []
         {
             "Add a new product",
             "Remove a product",
+            "Rename a product",
             "Print all products",
             "Deliver a product",
             "Sell a product",
@@ -54,16 +63,15 @@ public class StockApp
     }
 
     /**
-     * 
+     * A function which initialises the menu and starts the program
      */
     public void run()
     {
-        printHeading();
         getMenuChoice();
     }
     
     /**
-     * 
+     * Interprets user input at menu to execute a given task
      */
     public void getMenuChoice()
     {
@@ -72,7 +80,6 @@ public class StockApp
         while(!finished)
         {
             printHeading();
-            
             String choice = Menu.getMenuChoice(menuChoices);
             executeMenuChoice(choice);
             
@@ -80,10 +87,12 @@ public class StockApp
             {
                 finished = true;
             }
-            
         }
     }
     
+    /**
+     * Uses given choice to execute task linking set variables
+     */
     private void executeMenuChoice(String choice)
     {
         if(choice.equals(ADD))
@@ -92,9 +101,17 @@ public class StockApp
         }
         else if(choice.equals(REMOVE))
         {
-            System.out.println("Enter ID:\n");
+            System.out.println("|─| Enter ID:\n");
             int id = Integer.parseInt(reader.getInput());
             removeProduct(id);
+        }
+        else if(choice.equals(RENAME))
+        {
+            System.out.println("|R| Enter ID:\n");
+            int id = Integer.parseInt(reader.getInput());
+            System.out.println("|R| Enter New Name:\n");
+            String newName = reader.getInput();
+            renameProduct(id, newName);
         }
         else if(choice.equals(PRINTALL))
         {
@@ -102,72 +119,75 @@ public class StockApp
         }
         else if(choice.equals(DELIVER))
         {
-            System.out.println("Enter ID:\n");
+            System.out.println("|🚐| Enter ID:\n");
             int id = Integer.parseInt(reader.getInput());
-            System.out.println("Enter Delivery Amount:\n");
+            System.out.println("|🚐| Enter Delivery Amount:\n");
             int quantity = Integer.parseInt(reader.getInput());
             manager.deliverProduct(id, quantity);
         }
         else if(choice.equals(SELL))
         {
-            System.out.println("Enter ID:\n");
+            System.out.println("|£| Enter ID:\n");
             int id = Integer.parseInt(reader.getInput());
-            System.out.println("Enter Sell Amount:\n");
+            System.out.println("|£| Enter Sell Quantity:\n");
             int quantity = Integer.parseInt(reader.getInput());
             manager.sellProduct(id, quantity);
         }
         else if(choice.equals(SEARCH))
         {
-            System.out.println("Search for:\n");
+            System.out.println("|🔍| Search for:\n");
             String search = reader.getInput();
             manager.findProduct(search);
         }
         else if(choice.equals(FIND))
         {
-            manager.lowStockFinder();
+            System.out.println("|∀| Max Quantity Filter:\n");
+            int amount = Integer.parseInt(reader.getInput());
+            manager.lowStockFinder(amount);
         }
         else if(choice.equals(RESTOCK))
         {
-            manager.restockProducts();
+            System.out.println("|∀| Max Quantity Restock Filter:\n");
+            int amount = Integer.parseInt(reader.getInput());
+            manager.restockProducts(amount);
         }
     }
     
+    /**
+     * Uses dependancies from StockManager to perform add task
+     */
     private void addProduct()
     {
-        System.out.println("Add new Product:\n");
-        System.out.println("Enter ID\n");
+        System.out.println("|➕| Add new Product:\n");
+        System.out.println("|➕| Enter ID\n");
         int id = Integer.parseInt(reader.getInput());
-        System.out.println("Enter Name\n");
+        System.out.println("|➕| Enter Name\n");
         String name = reader.getInput();
         manager.addProduct(id, name);
     }
     
+    /**
+     * Uses dependancies from StockManager to perform remove task
+     */    
     private void removeProduct(int id)
     {
         manager.removeProduct(id);
     }
     
+    /**
+     * Uses dependancies from StockManager to perform remove task
+     */    
+    private void renameProduct(int id, String newName)
+    {
+        manager.renameProduct(id, newName);
+    }
+    
+    /**
+     * Uses dependancies from StockManager to perform printall task
+     */
     private void printAllProducts()
     {
         manager.printAllProducts();
-    }
-   
-    /**
-     * Print out a menu of operation choices
-     */
-    private void printMenuChoices()
-    {
-        System.out.println("  Add:        Add a new product");
-        System.out.println("  Remove:     Remove a product");
-        System.out.println("  PrintAll:   Print all products");
-        System.out.println("  Deliver:    Deliver a product");
-        System.out.println("  Sell:       Sell a product");
-        System.out.println("  Search:     Search for a product");
-        System.out.println("  LowStock:   Find products with low stock");
-        System.out.println("  ReStock:    Restocks low-stock products");
-        System.out.println("  Quit:       Quit the program");   
-        System.out.println("==============================================");
-        System.out.println();
     }
     
     /**

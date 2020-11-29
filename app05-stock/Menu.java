@@ -1,9 +1,9 @@
 
 /**
- * Write a description of class Menu here.
+ * Holds Menu functions
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Haroon Sadiq
+ * @version 0.1
  */
 public class Menu
 {
@@ -47,10 +47,11 @@ public class Menu
     
     private static void printChoices(String [] choices)
     {
-        System.out.println("Enter the first word, your choices are: \n");
+        System.out.println("Enter the first word of the choice to run: \n");
         for(String choice: choices)
         {
             System.out.println("   " + choice);
         }
+        System.out.println("==============================================");
     }
 }

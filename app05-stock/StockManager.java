@@ -33,15 +33,30 @@ public class StockManager
         if(check == true)
         {
             System.out.println();
-            System.out.println("ID conflict");
+            System.out.println("|✘| ID Conflict");
             System.out.println();
         }
         else
         {
-            stock.add(product);
-            System.out.println();
-            System.out.println("Added Successfully");
-            System.out.println();
+            if(name == null || name.isEmpty())
+            {
+                System.out.println();
+                System.out.println("|✘| Empty Name");
+                System.out.println();
+            }
+            else if(name.toLowerCase().equals("new product"))
+            {
+                System.out.println();
+                System.out.println("|✘| Invalid Name");
+                System.out.println();
+            }
+            else
+            {
+                stock.add(product);
+                System.out.println();
+                System.out.println("|✓| Added Successfully");
+                System.out.println();
+            }
         }
     }
     
@@ -109,7 +124,7 @@ public class StockManager
         }
         else
         {
-            System.out.println("Invalid ID");
+            System.out.println("|✘| Invalid ID");
         }
     }
     
@@ -140,34 +155,42 @@ public class StockManager
      */
     public void deliverProduct(int id, int quantity)   
     {
-        boolean resultSearch = false;
         String productName = null;
         int oldQuantity = 0;
         int newQuantity = 0;
+        int statusCode = 0;
         for(Product product : stock) 
         { 
-            if(product.getID() == id)
+            if(product.getID() == id && quantity > 0)
             { 
-                resultSearch = true;
+                statusCode = 2;
                 oldQuantity = product.getQuantity();
                 quantity = product.getQuantity() + quantity;
                 productName = product.getName();
                 product.replaceQuantity(quantity);
                 newQuantity = product.getQuantity();
             }
+            else if(quantity <= 0)
+            {
+                statusCode = 1;
+            }
         }
-        if(resultSearch  == true)
+        if(statusCode == 2)
         {
             System.out.println("======================================");
-            System.out.println("Delivered: " + productName);
+            System.out.println("|✓| Delivered: " + productName);
             System.out.println("======================================");
             System.out.println("Quantity Delivered : " + quantity);
             System.out.println("Stock level        : " + oldQuantity + " --> " + newQuantity);
             System.out.println("======================================");
         }
+        else if(statusCode == 1)
+        {
+            System.out.println("|✘| Invalid Inputted Quantity");
+        }
         else
         {
-            System.out.println("Invalid ID");
+            System.out.println("|✘| Invalid ID");
         }
         System.out.println();
     }
@@ -178,51 +201,55 @@ public class StockManager
      */
     public void sellProduct(int id, int sellQuantity)
     {
-        boolean resultSearch = false;
-        boolean error = false;
         String productName = null;
         int oldQuantity = 0;
         int newQuantity = 0;
+        int statusCode = 0;
         for(Product product : stock) 
         {
             if(product.getID() == id)
             {
                 int quantity = product.getQuantity();
-                if(quantity >= sellQuantity) 
+                if(quantity >= sellQuantity && sellQuantity > 0) 
                 {
-                    resultSearch = true;
+                    statusCode = 3;
                     oldQuantity = product.getQuantity();
                     quantity = quantity - sellQuantity;
                     product.replaceQuantity(quantity);
                     newQuantity = product.getQuantity();
                     productName = product.getName();
                 }
+                else if(sellQuantity <= 0)
+                {
+                    statusCode = 2;
+                }
                 else
                 {
-                    error = true;
+                    statusCode = 1;
                 }
             }
-            else
-            {
-                error = false;
-            }
         }
-        if(resultSearch  == true)
+        if(statusCode == 3)
         {
             System.out.println("======================================");
-            System.out.println("Sold: " + productName);
+            System.out.println("|✓| Sold: " + productName);
             System.out.println("======================================");
             System.out.println("Quantity Sold : " + sellQuantity);
             System.out.println("Stock level   : " + oldQuantity + " --> " + newQuantity);
             System.out.println("======================================");
         }
-        else if(error = true)
+        else if(statusCode == 2)
         {
-            System.out.println("Not enough stock available for inputted quantity");
+            System.out.println("|✘| Invalid Inputted Quantity");
         }
+        else if(statusCode == 1)
+        {
+            System.out.println("|✘| Not enough stock available for inputted quantity");
+        }
+        
         else
         {
-            System.out.println("Invalid ID");
+            System.out.println("|✘| Invalid ID");
         }
         System.out.println();
     }
@@ -247,11 +274,11 @@ public class StockManager
         }
         if(resultSearch  == true)
         {
-            System.out.println("Replaced '" + oldName + "' with '" + newName + "'");
+            System.out.println("|✓| Replaced '" + oldName + "' with '" + newName + "'");
         }
         else
         {
-            System.out.println("Invalid ID");
+            System.out.println("|✘| Invalid ID");
         }
         System.out.println();
     }
@@ -274,13 +301,13 @@ public class StockManager
         
         if(check == true)
         {
-            System.out.println("Removed: " + removedProduct);
+            System.out.println("|✓| Removed: " + removedProduct);
             stock.removeIf(product -> product.getID() == id);
         }
         
         else
         {
-            System.out.println("ID Not Found");
+            System.out.println("|✘| ID Not Found");
         }
     }
     
@@ -291,10 +318,13 @@ public class StockManager
     public void findProduct(String name)
     {
         boolean resultSearch = false;
+        boolean intError = false;
+        int intName = 0;
         System.out.println("======================================");
         System.out.println("            Product Search            ");
         System.out.println("======================================");
         System.out.println();
+        System.out.println("  Name Search Results:");
         for(Product product : stock) 
         { 
             if(product.getName().toLowerCase().contains(name.toLowerCase()))
@@ -305,11 +335,35 @@ public class StockManager
         }
         if(resultSearch == false)
         {
-            System.out.println("No Products found");
+            System.out.println("|🔍| No Products found\n");
+        }
+        try {
+            intName = Integer.parseInt(name);
+        }
+        catch (NumberFormatException e)
+        {
+            intError = true;
+        }
+        resultSearch = false;
+        if(intError == false)
+        {
+            System.out.println("  ID Search Results:");
+            for(Product product : stock) 
+            { 
+                if(product.getID() == intName)
+                {
+                    resultSearch = true;
+                    System.out.println(product.toString());
+                }
+            }
+            if(resultSearch == false)
+            {
+                System.out.println("|🔍| No Products found\n");
+            }
         }
         System.out.println();
         System.out.println("======================================");
-        System.out.println("You searched: '" + name + "'");
+        System.out.println("|🔍| You searched: '" + name + "'");
         System.out.println("======================================");
         System.out.println();
     }
@@ -318,7 +372,7 @@ public class StockManager
      * Searches product quantity through a loop with if statement to filter low stock
      * Includes an error system using if and else statements for easy user troubleshooting
      */
-    public void lowStockFinder()
+    public void lowStockFinder(int amountFilter)
     {
         boolean resultSearch = false;
         System.out.println("======================================");
@@ -327,7 +381,7 @@ public class StockManager
         System.out.println();
         for(Product product : stock) 
         { 
-            if(product.getQuantity() <= 5)
+            if(product.getQuantity() <= amountFilter)
             {
                 resultSearch = true;
                 System.out.println(product.toString());
@@ -335,13 +389,20 @@ public class StockManager
         }
         if(resultSearch == false)
         {
-            System.out.println("No Low Stock Products found");
+            System.out.println("|🔍| No Low Stock Products found");
         }
         System.out.println("======================================");
+        System.out.println("|🔍| Products with " + amountFilter + " or less stock");
+        System.out.println("======================================");
+        
         System.out.println();
     }
     
-    public void restockProducts()
+    /**
+     * Searches product quantity through a loop with if statement to filter low stock and then delivers 5 of each product automatically
+     * Includes an error system using if and else statements for easy user troubleshooting
+     */
+    public void restockProducts(int amountFilter)
     {
         boolean resultSearch = false;
         System.out.println("======================================");
@@ -350,7 +411,7 @@ public class StockManager
         System.out.println();
         for(Product product : stock) 
         { 
-            if(product.getQuantity() <= 5)
+            if(product.getQuantity() <= amountFilter)
             {
                 resultSearch = true;
                 int id = product.getID();
@@ -359,8 +420,10 @@ public class StockManager
         }
         if(resultSearch == false)
         {
-            System.out.println("No Low Stock Products found");
+            System.out.println("|🔍| No Low Stock Products found");
         }
+        System.out.println("======================================");
+        System.out.println("|🔍| Restocked products with " + amountFilter + " or less stock");
         System.out.println("======================================");
         System.out.println();
     }

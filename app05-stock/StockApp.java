@@ -11,7 +11,12 @@ public class StockApp
 {
     public final String ADD = "add";
     public final String REMOVE = "remove";
-    public final String PRINTALL = "printall";
+    public final String PRINTALL = "print";
+    public final String DELIVER = "deliver";
+    public final String SELL = "sell";
+    public final String SEARCH = "search";
+    public final String FIND = "find";
+    public final String RESTOCK = "restock";
     private String [] menuChoices;
     
     // Use to get user input
@@ -85,38 +90,39 @@ public class StockApp
         {
             addProduct();
         }
-        else if(choice.equals("remove"))
+        else if(choice.equals(REMOVE))
         {
-            System.out.println("n/Enter ID\n");
+            System.out.println("Enter ID:\n");
             int id = Integer.parseInt(reader.getInput());
             removeProduct(id);
         }
-        else if(choice.equals("printall"))
+        else if(choice.equals(PRINTALL))
         {
             printAllProducts();
         }
-        else if(choice.equals("deliver"))
+        else if(choice.equals(DELIVER))
         {
             int id = Integer.parseInt(reader.getInput());
             int quantity = Integer.parseInt(reader.getInput());
             manager.deliverProduct(id, quantity);
         }
-        else if(choice.equals("sell"))
+        else if(choice.equals(SELL))
         {
             int id = Integer.parseInt(reader.getInput());
             int quantity = Integer.parseInt(reader.getInput());
             manager.sellProduct(id, quantity);
         }
-        else if(choice.equals("search"))
+        else if(choice.equals(SEARCH))
         {
             String search = reader.getInput();
             manager.findProduct(search);
         }
-        else if(choice.equals("lowstock"))
+        else if(choice.equals(FIND))
         {
+            System.out.println("Search for:\n");
             manager.lowStockFinder();
         }
-        else if(choice.equals("restock"))
+        else if(choice.equals(RESTOCK))
         {
             manager.restockProducts();
         }

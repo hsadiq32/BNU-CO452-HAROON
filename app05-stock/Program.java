@@ -1,6 +1,6 @@
 
 /**
- * Write a description of class Program here.
+ * Program class which initialises StockApp
  *
  * @author Haroon Sadiq
  * @version 0.1

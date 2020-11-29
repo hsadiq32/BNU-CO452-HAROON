@@ -7,10 +7,11 @@
  */
 public class Menu
 {
+    // Allows reader to be called directly against the class Menu
     private static InputReader reader = new InputReader();
     
     /**
-     * Outputs programmed choices 
+     * Scans user input and outputs programmed choices 
      */
     public static String getMenuChoice(String [] choices)
     {
@@ -34,6 +35,9 @@ public class Menu
         return choice;
     }
     
+    /**
+     * Checks if inputted data matches choices array
+     */
     private static boolean checkIfValid(String [] choices, String choice)
     { 
         for(String validChoice : choices)
@@ -45,6 +49,10 @@ public class Menu
         return false;
     }
     
+    
+    /**
+     * Prints array of choices
+     */
     private static void printChoices(String [] choices)
     {
         System.out.println("Enter the first word of the choice to run: \n");

@@ -313,6 +313,7 @@ public class StockManager
     
     /**
      * Finds a product using syntax similar to arraylist items
+     * Uses try and catch handles to dertmine if string can be converted to int for ID search
      * Includes an error system using if and else statements for easy user troubleshooting
      */
     public void findProduct(String name)

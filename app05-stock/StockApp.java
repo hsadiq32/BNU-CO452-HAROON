@@ -102,24 +102,28 @@ public class StockApp
         }
         else if(choice.equals(DELIVER))
         {
+            System.out.println("Enter ID:\n");
             int id = Integer.parseInt(reader.getInput());
+            System.out.println("Enter Delivery Amount:\n");
             int quantity = Integer.parseInt(reader.getInput());
             manager.deliverProduct(id, quantity);
         }
         else if(choice.equals(SELL))
         {
+            System.out.println("Enter ID:\n");
             int id = Integer.parseInt(reader.getInput());
+            System.out.println("Enter Sell Amount:\n");
             int quantity = Integer.parseInt(reader.getInput());
             manager.sellProduct(id, quantity);
         }
         else if(choice.equals(SEARCH))
         {
+            System.out.println("Search for:\n");
             String search = reader.getInput();
             manager.findProduct(search);
         }
         else if(choice.equals(FIND))
         {
-            System.out.println("Search for:\n");
             manager.lowStockFinder();
         }
         else if(choice.equals(RESTOCK))
